@@ -1,15 +1,9 @@
 import React, { FC, useEffect } from "react";
-import { LatLngExpression } from "leaflet";
-import {
-  CircleMarker,
-  MapContainer,
-  Popup,
-  TileLayer,
-  useMap,
-} from "react-leaflet";
+import { Icon, LatLngExpression } from "leaflet";
+import { MapContainer, Popup, TileLayer, useMap, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-draw/dist/leaflet.draw.css";
-import { House, getHousesData, makeData } from "~/lib/data";
+import { House } from "~/lib/data";
 import { AspectRatio } from "./ui/aspect-ratio";
 
 import FallbackImage from "./ui/fallback-image";
@@ -33,12 +27,16 @@ interface MapComponentProps {
   houses: House[];
 }
 
-const MapComponent:FC<MapComponentProps> = ({houses}) => {
+const MapComponent: FC<MapComponentProps> = ({ houses }) => {
   const position: LatLngExpression = [52.35, 4.9166];
-  
+
   const fallbackImageUrl =
     "https://images.pexels.com/photos/206172/pexels-photo-206172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
-
+  const houseIcon = new Icon({
+    iconUrl:
+      "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWhvbWUiPjxwYXRoIGQ9Im0zIDkgOS03IDkgN3YxMWEyIDIgMCAwIDEtMiAySDVhMiAyIDAgMCAxLTItMnoiLz48cG9seWxpbmUgcG9pbnRzPSI5IDIyIDkgMTIgMTUgMTIgMTUgMjIiLz48L3N2Zz4=",
+    iconSize: [25, 25], // Size of the icon
+  });
   return (
     <>
       {/* Map Container - Adjust based on sidebar state */}
@@ -63,11 +61,11 @@ const MapComponent:FC<MapComponentProps> = ({houses}) => {
           <InvalidateSizeComponent />
           <TileLayer url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}" />
           {houses.map((house, index) => (
-            <CircleMarker
+            <Marker
               key={index}
-              center={house.lat_long}
-              pathOptions={{ color: "red" }}
-              radius={10}
+              position={house.lat_long}
+              icon={houseIcon}
+              interactive={true}
             >
               <Popup>
                 <div className="inline-flex space-x-2 ">
@@ -103,7 +101,7 @@ const MapComponent:FC<MapComponentProps> = ({houses}) => {
                   </div>
                 </div>
               </Popup>
-            </CircleMarker>
+            </Marker>
           ))}
         </MapContainer>
       </div>
