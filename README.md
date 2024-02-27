@@ -1,28 +1,60 @@
-# Create T3 App
+Below is a template for a README file for your project "Anyone". It's structured to provide a clear and comprehensive overview of the project, how to set it up, and how to contribute to it. This template follows best practices for readability and ease of understanding.
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+---
 
-## What's next? How do I make an app with this?
+# Anyone for fun
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+Anyone for fun is a React-based web application that showcases properties for sale on an interactive map. Utilizing the powerful features of `react-leaflet`, this project aims to provide users with a seamless and intuitive way to browse through available houses for sale, represented as custom house-shaped markers on the map.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Features
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- **Interactive Map**: Browse houses for sale displayed on an interactive map.
+- **Custom House Markers**: Properties are marked with custom house-shaped icons for easy identification.
+- **Property Details**: Click on any house marker to view detailed information about the property, including images, price, and other relevant details.
+- **Responsive Design**: Enjoy a seamless browsing experience on any device, thanks to the responsive design.
 
-## Learn More
+## Getting Started
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+### Prerequisites
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+Before you begin, ensure you have the following installed:
+- Node.js (version 18.x or higher)
 
-## How do I deploy this?
+### Installation
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+1. **Clone the repository**
+
+```sh
+git clone https://github.com/UretzkyZvi/anyoneforfun.git
+cd anyone
+```
+
+2. **Install dependencies**
+
+```sh
+npm install
+```
+
+3. **Start the development server**
+
+```sh
+npm start
+```
+
+This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Usage
+
+After starting the development server, you can interact with the map to explore the houses for sale. Click on any house marker to view more details about the property.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- React Leaflet for providing an incredible tool to work with maps in React.
+- Lucide React for the beautiful icons used in the project.
+- The React community for continuous support and inspiration.
