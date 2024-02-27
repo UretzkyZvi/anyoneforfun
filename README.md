@@ -51,7 +51,7 @@ After starting the development server, you can interact with the map to explore 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
 
 ## Acknowledgments
 
