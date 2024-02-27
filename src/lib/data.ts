@@ -16,7 +16,7 @@ export type House = {
 
 }
 export const fallbackImageUrl =
-"https://images.pexels.com/photos/206172/pexels-photo-206172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+    "https://images.pexels.com/photos/206172/pexels-photo-206172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 const range = (len: number) => {
     const arr: number[] = []
     for (let i = 0; i < len; i++) {
@@ -58,10 +58,9 @@ export const makeData = (len: number) => {
 }
 
 export const getHousesData = () => {
-    console.log('getHousesData')
     let houses: House[];
-    if ( localStorage.getItem("houses") !== null){
-        houses = JSON.parse(localStorage.getItem("houses") || "[]");
+    if (localStorage.getItem("houses") !== null) {
+        houses = JSON.parse(localStorage.getItem("houses") ?? "[]") as House[];
     } else {
         houses = makeData(10);
         localStorage.setItem("houses", JSON.stringify(houses));
