@@ -1,14 +1,14 @@
 import "~/styles/globals.css";
 
-import { Bree_Serif  as FontSerif,} from "next/font/google";
+import { Bree_Serif as FontSerif } from "next/font/google";
 import { cn } from "~/lib/utils";
 import { TRPCReactProvider } from "~/trpc/react";
 import Header from "../components/header";
+import { Analytics } from "@vercel/analytics/react";
 
 export const fontSerif = FontSerif({
   subsets: ["latin"],
   weight: "400",
-
 });
 export const metadata = {
   title: "Anyone App",
@@ -26,7 +26,7 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          "bg-background min-h-svh  antialiased",
+          "min-h-svh bg-background  antialiased",
           fontSerif.className,
         )}
       >
@@ -34,6 +34,7 @@ export default function RootLayout({
           <Header />
           <main className="mt-2 pt-16">{children}</main>
         </TRPCReactProvider>
+        <Analytics />
       </body>
     </html>
   );
