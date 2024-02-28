@@ -41,7 +41,7 @@ const MapComponent: FC<MapComponentProps> = ({ houses }) => {
     <>
       {/* Map Container - Adjust based on sidebar state */}
       <div
-        className={`transition-margin relative top-16 z-10   flex-grow duration-300 ease-in-out`}
+        className={`transition-margin relative z-10 flex-grow duration-300 ease-in-out`}
         style={{ height: "100%" }}
       >
         <MapContainer
